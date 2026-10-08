@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/tree/farmercar_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/tree/farmercar_ws/src/apriltag_ros/include/**",
+        "/home/tree/farmercar_ws/src/camera_manager/include/**",
+        "/home/tree/farmercar_ws/src/vehicle_controller/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

@@ -1,0 +1,21 @@
+<launch>
+  <!-- CH340 命令串口参数 -->
+  <arg name="port" default="/dev/ttyCH341USB0" />
+  <!-- 虚拟串口：速度/角度状态从此口接收，运动数据也从此口发送 -->
+  <arg name="virtual_port" default="/dev/ttyACM0" />
+  <arg name="baudrate" default="115200" />
+
+  <!-- 日志级别：debug / info / warn / error -->
+  <arg name="log_level" default="info" />
+
+  <node pkg="vehicle_controller"
+        type="vehicle_controller_node"
+        name="vehicle_controller_node"
+        output="screen"
+        launch-prefix="" >
+    <param name="port" value="$(arg port)" />
+    <param name="virtual_port" value="$(arg virtual_port)" />
+    <param name="baudrate" value="$(arg baudrate)" />
+    <param name="~log_level" value="$(arg log_level)" />
+  </node>
+</launch>

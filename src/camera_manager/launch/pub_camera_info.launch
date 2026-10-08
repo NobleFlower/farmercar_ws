@@ -1,0 +1,5 @@
+<launch>
+  <node name="camera_info_loader" pkg="your_package" type="camera_info_loader" output="screen">
+    <param name="camera_info_url" value="file://$(find your_package)/config/camera.yaml"/>
+  </node>
+</launch>
