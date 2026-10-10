@@ -205,3 +205,19 @@ target_link_libraries(camera_info_loader
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+# Install the unified perception launch and measured-steering frame broadcaster.
+catkin_install_python(PROGRAMS scripts/vehicle_camera_tf.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+install(TARGETS camera_info_loader
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+install(DIRECTORY launch config
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+install(FILES README.md
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+
+if(CATKIN_ENABLE_TESTING)
+  find_package(rostest REQUIRED)
+  add_rostest(test/geometry_preview.test)
+  add_rostest(test/control_pipeline.test)
+endif()

@@ -1,0 +1,19 @@
+[INFO] [1791598630.660913]: Tricycle kinematics: vx + yaw_rate only; vy/in-place rotation rejected. Software outputs only.
+[INFO] [1791598630.650515]: Velocity bridge: differential passthrough / holonomic bearing approximation. Software only.
+[INFO] [1791598630.654046]: Tricycle kinematics: vx + yaw_rate only; vy/in-place rotation rejected. Software outputs only.
+[INFO] [1791598630.657283]: Velocity bridge: differential passthrough / holonomic bearing approximation. Software only.
+... logging to /home/tree/.ros/log/rostest-tree-23832.log
+[ROSUNIT] Outputting test results to /home/tree/.ros/test_results/velocity_adapter/rostest-test_adapter.xml
+[Testcase: testadapter] ... ok
+
+[ROSTEST]-----------------------------------------------------------------------
+
+[velocity_adapter.rosunit-adapter/test_differential_omni_and_watchdogs][passed]
+
+SUMMARY
+[32m * RESULT: SUCCESS[0m
+ * TESTS: 1
+ * ERRORS: 0
+ * FAILURES: 0
+
+rostest log file is in /home/tree/.ros/log/rostest-tree-23832.log

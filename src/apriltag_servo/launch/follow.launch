@@ -1,0 +1,26 @@
+<launch>
+  <arg name="start_enabled" default="false"/>
+  <arg name="target_tag_id" default="0"/>
+  <arg name="desired_distance" default="1.0"/>
+  <arg name="detections_topic" default="/tag_detections"/>
+  <arg name="preview_namespace" default="/apriltag_servo/preview"/>
+  <arg name="camera_frame" default="camera_optical_frame"/>
+  <arg name="servo_frame" default="camera_link"/>
+  <arg name="tag_frame" default="apriltag_link"/>
+  <arg name="publish_tag_tf" default="true"/>
+  <node pkg="apriltag_servo" type="apriltag_follow_preview.py" name="apriltag_follow_preview" output="screen">
+    <rosparam command="load" file="$(find apriltag_servo)/config/follow.yaml"/>
+    <param name="start_enabled" value="$(arg start_enabled)"/>
+    <param name="target_tag_id" value="$(arg target_tag_id)"/>
+    <param name="desired_distance" value="$(arg desired_distance)"/>
+    <param name="camera_frame" value="$(arg camera_frame)"/>
+    <param name="servo_frame" value="$(arg servo_frame)"/>
+    <param name="tag_frame" value="$(arg tag_frame)"/>
+    <param name="publish_tag_tf" value="$(arg publish_tag_tf)"/>
+    <remap from="detections" to="$(arg detections_topic)"/>
+    <remap from="preview/cmd_vel" to="$(arg preview_namespace)/cmd_vel"/>
+    <remap from="preview/steering_angle" to="$(arg preview_namespace)/steering_angle"/>
+    <remap from="preview/status" to="$(arg preview_namespace)/status"/>
+    <remap from="preview/target_pose" to="$(arg preview_namespace)/target_pose"/>
+  </node>
+</launch>

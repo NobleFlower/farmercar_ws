@@ -1,0 +1,84 @@
+[  5%] Built target camera_info_loader
+[  5%] Built target std_msgs_generate_messages_cpp
+[  5%] Built target _apriltag_ros_generate_messages_check_deps_AprilTagDetection
+[  5%] Built target sensor_msgs_generate_messages_cpp
+[  5%] Built target geometry_msgs_generate_messages_cpp
+[  5%] Built target _apriltag_ros_generate_messages_check_deps_AnalyzeSingleImage
+[  5%] Built target _apriltag_ros_generate_messages_check_deps_AprilTagDetectionArray
+[  5%] Built target sensor_msgs_generate_messages_py
+[  5%] Built target geometry_msgs_generate_messages_py
+[  5%] Built target std_msgs_generate_messages_py
+[  5%] Built target geometry_msgs_generate_messages_nodejs
+[  5%] Built target sensor_msgs_generate_messages_nodejs
+[  5%] Built target std_msgs_generate_messages_nodejs
+[  5%] Built target sensor_msgs_generate_messages_lisp
+[  5%] Built target geometry_msgs_generate_messages_lisp
+[  5%] Built target std_msgs_generate_messages_lisp
+[  5%] Built target std_msgs_generate_messages_eus
+[  5%] Built target sensor_msgs_generate_messages_eus
+[  5%] Built target geometry_msgs_generate_messages_eus
+[  5%] Built target tf2_msgs_generate_messages_nodejs
+[  5%] Built target roscpp_generate_messages_lisp
+[  5%] Built target rosgraph_msgs_generate_messages_py
+[  5%] Built target roscpp_generate_messages_nodejs
+[  5%] Built target roscpp_generate_messages_cpp
+[  5%] Built target roscpp_generate_messages_py
+[  5%] Built target rosgraph_msgs_generate_messages_eus
+[  5%] Built target rosgraph_msgs_generate_messages_lisp
+[  5%] Built target rosgraph_msgs_generate_messages_nodejs
+[  5%] Built target rosgraph_msgs_generate_messages_cpp
+[  5%] Built target roscpp_generate_messages_eus
+[  5%] Built target tf2_msgs_generate_messages_py
+[  5%] Built target bond_generate_messages_lisp
+[  5%] Built target nodelet_generate_messages_py
+[  5%] Built target tf_generate_messages_nodejs
+[  5%] Built target bond_generate_messages_cpp
+[  5%] Built target bond_generate_messages_eus
+[  5%] Built target tf_generate_messages_lisp
+[  5%] Built target actionlib_msgs_generate_messages_eus
+[  5%] Built target tf2_msgs_generate_messages_lisp
+[  5%] Built target nodelet_generate_messages_lisp
+[  5%] Built target tf_generate_messages_py
+[  5%] Built target tf_generate_messages_cpp
+[  5%] Built target actionlib_generate_messages_py
+[  5%] Built target actionlib_msgs_generate_messages_nodejs
+[  5%] Built target bond_generate_messages_nodejs
+[  5%] Built target nodelet_generate_messages_nodejs
+[  5%] Built target nodelet_generate_messages_cpp
+[  5%] Built target nodelet_generate_messages_eus
+[  5%] Built target actionlib_generate_messages_nodejs
+[  5%] Built target tf2_msgs_generate_messages_eus
+[  5%] Built target actionlib_msgs_generate_messages_cpp
+[  5%] Built target actionlib_generate_messages_eus
+[  5%] Built target actionlib_generate_messages_lisp
+[  5%] Built target actionlib_msgs_generate_messages_lisp
+[  5%] Built target actionlib_generate_messages_cpp
+[  5%] Built target actionlib_msgs_generate_messages_py
+[  5%] Built target tf_generate_messages_eus
+[  5%] Built target tf2_msgs_generate_messages_cpp
+[  5%] Built target bond_generate_messages_py
+[ 15%] Built target vehicle_controller_node
+[ 23%] Built target apriltag_ros_generate_messages_cpp
+[ 36%] Built target apriltag_ros_generate_messages_py
+[ 44%] Built target apriltag_ros_generate_messages_nodejs
+[ 52%] Built target apriltag_ros_generate_messages_lisp
+[ 63%] Built target apriltag_ros_generate_messages_eus
+[ 63%] Built target apriltag_ros_generate_messages
+[ 68%] Built target apriltag_ros_common
+[ 73%] Built target apriltag_ros_single_image_client_node
+[ 78%] Built target apriltag_ros_single_image_detector
+[ 84%] Built target apriltag_ros_continuous_detector
+[ 89%] Built target apriltag_ros_single_image_server_node
+[ 94%] Built target apriltag_ros_continuous_node
+[100%] Built target apriltag_line_nav
+Base path: /home/tree/farmercar_ws
+Source space: /home/tree/farmercar_ws/src
+Build space: /home/tree/farmercar_ws/build
+Devel space: /home/tree/farmercar_ws/devel
+Install space: /home/tree/farmercar_ws/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/tree/farmercar_ws/build"
+####
+####
+#### Running command: "make -j2 -l2" in "/home/tree/farmercar_ws/build"
+####

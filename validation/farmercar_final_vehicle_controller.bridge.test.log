@@ -1,0 +1,16 @@
+[INFO] [1791600476.850398]: Vehicle bridge serial_enabled=False protocol=extended; starts disarmed.
+... logging to /home/tree/.ros/log/rostest-tree-29135.log
+[ROSUNIT] Outputting test results to /home/tree/.ros/test_results/vehicle_controller/rostest-test_bridge.xml
+[Testcase: testbridge] ... ok
+
+[ROSTEST]-----------------------------------------------------------------------
+
+[vehicle_controller.rosunit-bridge/test_bridge_fields_and_gates][passed]
+
+SUMMARY
+[32m * RESULT: SUCCESS[0m
+ * TESTS: 1
+ * ERRORS: 0
+ * FAILURES: 0
+
+rostest log file is in /home/tree/.ros/log/rostest-tree-29135.log

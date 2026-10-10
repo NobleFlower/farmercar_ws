@@ -1,0 +1,19 @@
+# AprilTag目标ID
+target_tag_id: 0
+
+# 控制参数
+# 第一阶段建议从很小的值开始
+k_lateral: 25.0
+k_yaw: 1.0
+
+# 最大理论转向角
+max_steering_angle: 50.0
+
+# Tag丢失超过该时间后，输出0度转向
+tag_timeout: 0.5
+
+# 距离太近时停止进一步靠近
+stop_distance: 0.5
+
+# 调试频率
+print_frequency: 5.0

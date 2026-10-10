@@ -1,0 +1,15 @@
+... logging to /home/tree/.ros/log/rostest-tree-29219.log
+[ROSUNIT] Outputting test results to /home/tree/.ros/test_results/vehicle_controller/rostest-test_serial_transport.xml
+[Testcase: testserial_transport] ... ok
+
+[ROSTEST]-----------------------------------------------------------------------
+
+[vehicle_controller.rosunit-serial_transport/test_virtual_mcu_roundtrip_and_feedback_loss][passed]
+
+SUMMARY
+[32m * RESULT: SUCCESS[0m
+ * TESTS: 1
+ * ERRORS: 0
+ * FAILURES: 0
+
+rostest log file is in /home/tree/.ros/log/rostest-tree-29219.log

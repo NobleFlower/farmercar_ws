@@ -1,0 +1,50 @@
+<launch>
+  <!-- 仅感知、TF 和伺服预览；此文件不启动底盘串口驱动。 -->
+  <arg name="video_device" default="/dev/video0" />
+  <arg name="calibration_file" default="$(find camera_manager)/config/ost.yaml" />
+  <arg name="geometry_file" default="$(find camera_manager)/config/geometry.yaml" />
+  <arg name="assume_zero_steering" default="true" />
+  <arg name="camera_frame" default="camera_optical_frame" />
+  <arg name="enable_follow_preview" default="true" />
+  <arg name="target_tag_id" default="0" />
+  <arg name="serial_enabled" default="false" />
+  <arg name="vehicle_port" default="/dev/ttyACM0" />
+  <arg name="vehicle_baudrate" default="115200" />
+  <arg name="vehicle_config" default="$(find vehicle_controller)/config/bridge.yaml" />
+  <arg name="vehicle_protocol" default="legacy" />
+  <arg name="desired_distance" default="1.0" />
+
+  <include file="$(find camera_manager)/launch/enable_cam.launch">
+    <arg name="video_device" value="$(arg video_device)" />
+    <arg name="calibration_file" value="$(arg calibration_file)" />
+    <arg name="camera_frame" value="$(arg camera_frame)" />
+  </include>
+  <group ns="usb_cam">
+    <node name="image_proc" pkg="image_proc" type="image_proc" output="screen" />
+  </group>
+  <include file="$(find apriltag_ros)/launch/continuous_detection.launch">
+    <arg name="camera_name" value="/usb_cam" />
+    <arg name="image_topic" value="image_rect_color" />
+    <arg name="camera_frame" value="$(arg camera_frame)" />
+  </include>
+  <include file="$(find camera_manager)/launch/tf_only.launch">
+    <arg name="geometry_file" value="$(arg geometry_file)" />
+    <arg name="assume_zero_steering" value="$(arg assume_zero_steering)" />
+  </include>
+  <include if="$(arg enable_follow_preview)" file="$(find apriltag_servo)/launch/follow.launch">
+    <arg name="camera_frame" value="$(arg camera_frame)" />
+    <arg name="target_tag_id" value="$(arg target_tag_id)" />
+    <arg name="desired_distance" value="$(arg desired_distance)" />
+  </include>
+  <include if="$(arg enable_follow_preview)" file="$(find velocity_adapter)/launch/tricycle.launch">
+    <arg name="input_stamped" value="true" />
+    <arg name="input_topic" value="/apriltag_servo/preview/cmd_vel" />
+  </include>
+  <include file="$(find vehicle_controller)/launch/vehicle_bridge.launch">
+    <arg name="config_file" value="$(arg vehicle_config)" />
+    <arg name="serial_enabled" value="$(arg serial_enabled)" />
+    <arg name="port" value="$(arg vehicle_port)" />
+    <arg name="baudrate" value="$(arg vehicle_baudrate)" />
+    <arg name="protocol_version" value="$(arg vehicle_protocol)" />
+  </include>
+</launch>

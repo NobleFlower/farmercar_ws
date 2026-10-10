@@ -1,0 +1,158 @@
+{
+  "capture_kind": "read_only_running_state",
+  "document_date": "2026-10-10",
+  "driver_status": {
+    "actuation_permitted": false,
+    "armed": false,
+    "command_reason": "ok",
+    "desired_hex": "ee 01 04 00 00 84 03 7a",
+    "desired_speed_mps": 0.0,
+    "desired_steering_rad": 0.0,
+    "dry_run": true,
+    "feedback_received": false,
+    "follow_enabled": false,
+    "host_emergency_stop": false,
+    "io_fault": null,
+    "output_speed_mps": 0,
+    "output_steering_rad": 0,
+    "packet_written": false,
+    "parser_errors": 0,
+    "protocol_version": "legacy",
+    "reason": "follow_disabled",
+    "serial_enabled": false,
+    "tx_hex": "ee 01 04 00 00 84 03 7a"
+  },
+  "host": "tree@10.62.134.197",
+  "nodes": [
+    "/apriltag_ros_continuous_node",
+    "/vehicle_camera_tf",
+    "/apriltag_follow_preview",
+    "/rosout",
+    "/vehicle_controller_bridge",
+    "/usb_cam/image_proc",
+    "/usb_cam",
+    "/velocity_adapter",
+    "/tricycle_controller"
+  ],
+  "parameters": {
+    "apriltag_follow_preview": {
+      "camera_frame": "camera_optical_frame",
+      "control_rate": 20.0,
+      "desired_distance": 1.0,
+      "distance_deadband": 0.05,
+      "distance_gain": 0.3,
+      "future_tolerance": 0.05,
+      "max_acceleration": 0.15,
+      "max_speed": 0.15,
+      "max_steering_deg": 50.0,
+      "minimum_forward_target": 0.05,
+      "publish_tag_tf": true,
+      "servo_frame": "camera_link",
+      "start_enabled": false,
+      "tag_frame": "apriltag_link",
+      "target_tag_id": 0,
+      "target_timeout": 0.5,
+      "wheelbase": 0.839
+    },
+    "apriltag_ros_continuous_node": {
+      "camera_frame": "camera_optical_frame",
+      "publish_tag_detections_image": true,
+      "publish_tf": true,
+      "standalone_tags": [
+        {
+          "id": 0,
+          "name": "road11",
+          "size": 0.154
+        },
+        {
+          "id": 1,
+          "name": "road12",
+          "size": 0.154
+        },
+        {
+          "id": 3,
+          "name": "road21",
+          "size": 0.154
+        }
+      ],
+      "tag_blur": 0.0,
+      "tag_debug": 0,
+      "tag_decimate": 1.0,
+      "tag_family": "tag36h11",
+      "tag_refine_edges": 1,
+      "tag_threads": 2
+    },
+    "tricycle_controller": {
+      "base_frame": "base_link",
+      "command_timeout": 0.5,
+      "future_tolerance": 0.05,
+      "input_stamped": true,
+      "lateral_tolerance": 1e-06,
+      "max_forward_speed": 0.15,
+      "max_reverse_speed": 0.15,
+      "max_steering_deg": 50.0,
+      "output_rate": 20.0,
+      "wheelbase": 0.839,
+      "yaw_tolerance": 1e-06,
+      "zero_speed_tolerance": 1e-06
+    },
+    "vehicle_camera_tf": {
+      "assume_zero_steering": true,
+      "max_steering_angle": 0.8726646259971648,
+      "publish_rate": 30.0,
+      "steering_joint": "steering_joint",
+      "steering_timeout": 0.5,
+      "steering_topic": "/vehicle/steering_joint_states"
+    },
+    "vehicle_controller_bridge": {
+      "allow_legacy_actuation": false,
+      "baudrate": 115200,
+      "command_timeout": 0.5,
+      "feedback_timeout": 0.5,
+      "legacy_speed_is_measured": false,
+      "legacy_steering_is_measured": false,
+      "max_ack_lag": 10,
+      "max_speed": 0.15,
+      "max_steering_deg": 50.0,
+      "output_rate": 20.0,
+      "port": "/dev/ttyACM0",
+      "protocol_speed_units_per_mps": 1.0,
+      "protocol_version": "legacy",
+      "publish_simulated_joint_states": false,
+      "require_ack": false,
+      "require_feedback": true,
+      "serial_enabled": false,
+      "steering_neutral_deg": 90.0,
+      "steering_sign": 1,
+      "wheelbase": 0.839
+    },
+    "velocity_adapter": {
+      "allow_reverse": true,
+      "base_frame": "base_link",
+      "command_timeout": 0.5,
+      "future_tolerance": 0.05,
+      "heading_gain": 0.5,
+      "input_stamped": true,
+      "output_rate": 20.0,
+      "zero_tolerance": 1e-06
+    }
+  },
+  "servo_status": {
+    "actuator_allowed": false,
+    "coordinate_mode": "optical_axes_only",
+    "desired_distance_m": 1.0,
+    "enabled": false,
+    "mode": "SOFTWARE_COMMAND",
+    "mounting_compensation": false,
+    "reason": "follow_disabled",
+    "speed_mps": 0.0,
+    "steering_compensation": false,
+    "steering_rad": 0.0,
+    "tag_forward_distance_m": null,
+    "target_age_s": null,
+    "target_tag_id": 0,
+    "yaw_rate_radps": 0.0
+  },
+  "timezone": "Asia/Shanghai",
+  "workspace": "/home/tree/farmercar_ws"
+}

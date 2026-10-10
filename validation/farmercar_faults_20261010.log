@@ -1,0 +1,17 @@
+[WARN] [1791556414.141289]: AprilTag servo is PREVIEW ONLY; geometry_calibrated=True, assume_zero_steering=True. No actuator publisher exists.
+[WARN] [1791556414.596955]: Cannot transform AprilTag at detection stamp: "servo_test_missing" passed to lookupTransform argument source_frame does not exist. 
+... logging to /home/tree/.ros/log/rostest-tree-48575.log
+[ROSUNIT] Outputting test results to /home/tree/.ros/test_results/apriltag_servo/rostest-test_faults.xml
+[Testcase: testservo_faults] ... ok
+
+[ROSTEST]-----------------------------------------------------------------------
+
+[apriltag_servo.rosunit-servo_faults/test_faults_and_recovery][passed]
+
+SUMMARY
+[32m * RESULT: SUCCESS[0m
+ * TESTS: 1
+ * ERRORS: 0
+ * FAILURES: 0
+
+rostest log file is in /home/tree/.ros/log/rostest-tree-48575.log

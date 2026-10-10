@@ -1,0 +1,18 @@
+INFO: cannot create a symlink to latest log directory: [Errno 17] File exists: '/home/tree/.ros/log/df9ddf1e-c3f0-11f1-a4fc-f9804a679262' -> '/home/tree/.ros/log/latest'
+[WARN] [1791557474.030216]: Protocol preview only: no serial port is opened. Speed units / steering sign need calibration.
+[WARN] [1791557475.503119]: Steering feedback stale: stopped publishing the moving TF edge.
+... logging to /home/tree/.ros/log/rostest-tree-52941.log
+[ROSUNIT] Outputting test results to /home/tree/.ros/test_results/camera_manager/rostest-test_geometry_preview.xml
+[Testcase: testgeometry_preview] ... ok
+
+[ROSTEST]-----------------------------------------------------------------------
+
+[camera_manager.rosunit-geometry_preview/test_geometry_and_preview_watchdog][passed]
+
+SUMMARY
+[32m * RESULT: SUCCESS[0m
+ * TESTS: 1
+ * ERRORS: 0
+ * FAILURES: 0
+
+rostest log file is in /home/tree/.ros/log/rostest-tree-52941.log

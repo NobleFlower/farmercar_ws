@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "matching_tag_frames": 9,
+  "command_samples": 20,
+  "last_tag_optical_z": 2.892212540976611,
+  "last_speed": 0.061780420650075024,
+  "last_steering_deg": 8.273846220485995,
+  "serial_enabled": false,
+  "driver_armed": false,
+  "physical_packet_written": false,
+  "graph_links": [
+    [
+      "/tag_detections",
+      "/apriltag_follow_preview"
+    ],
+    [
+      "/apriltag_servo/preview/cmd_vel",
+      "/velocity_adapter"
+    ],
+    [
+      "/velocity_adapter/adapted_cmd_vel",
+      "/tricycle_controller"
+    ],
+    [
+      "/tricycle_controller/command",
+      "/vehicle_controller_bridge"
+    ]
+  ],
+  "restored_follow_disabled": true
+}

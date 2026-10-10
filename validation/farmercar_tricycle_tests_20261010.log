@@ -1,0 +1,17 @@
+[INFO] [1791598086.423433]: Tricycle kinematics: vx + yaw_rate only; vy/in-place rotation rejected. Software outputs only.
+[INFO] [1791598086.423928]: Tricycle kinematics: vx + yaw_rate only; vy/in-place rotation rejected. Software outputs only.
+... logging to /home/tree/.ros/log/rostest-tree-21647.log
+[ROSUNIT] Outputting test results to /home/tree/.ros/test_results/tricycle_controller/rostest-test_controller.xml
+[Testcase: testcontroller] ... ok
+
+[ROSTEST]-----------------------------------------------------------------------
+
+[tricycle_controller.rosunit-controller/test_plain_and_stamped_inputs][passed]
+
+SUMMARY
+[32m * RESULT: SUCCESS[0m
+ * TESTS: 1
+ * ERRORS: 0
+ * FAILURES: 0
+
+rostest log file is in /home/tree/.ros/log/rostest-tree-21647.log

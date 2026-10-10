@@ -1,0 +1,38 @@
+[INFO] [1791600484.806522]: Velocity bridge: differential passthrough / holonomic bearing approximation. Software only.
+shutdown request: user request
+[WARN] [1791600484.820332]: AprilTag servo PREVIEW ONLY: direct optical z -> forward x, no mounting or steering compensation.
+shutdown request: user request
+Exception in thread Thread-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/timer.py", line 240, in run
+    self._callback(TimerEvent(last_expected, last_real, current_expected, current_real, last_duration))
+  File "/home/tree/farmercar_ws/src/tricycle_controller/scripts/tricycle_controller_node.py", line 109, in tick
+    self.emit_latest()
+  File "/home/tree/farmercar_ws/src/tricycle_controller/scripts/tricycle_controller_node.py", line 81, in emit_latest
+    self.publish(result, now, stamp, requested)
+  File "/home/tree/farmercar_ws/src/tricycle_controller/scripts/tricycle_controller_node.py", line 94, in publish
+    self.pub.publish(command)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/topics.py", line 882, in publish
+    self.impl.publish(data)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/topics.py", line 1041, in publish
+    raise ROSException("publish() to a closed topic")
+rospy.exceptions.ROSException: publish() to a closed topic
+[INFO] [1791600484.831425]: Vehicle bridge serial_enabled=False protocol=legacy; starts disarmed.
+[INFO] [1791600484.813806]: Tricycle kinematics: vx + yaw_rate only; vy/in-place rotation rejected. Software outputs only.
+... logging to /home/tree/.ros/log/rostest-tree-29300.log
+[ROSUNIT] Outputting test results to /home/tree/.ros/test_results/camera_manager/rostest-test_control_pipeline.xml
+[Testcase: testcontrol_pipeline] ... ok
+
+[ROSTEST]-----------------------------------------------------------------------
+
+[camera_manager.rosunit-control_pipeline/test_pipeline_faults_manual_start_and_node_loss][passed]
+
+SUMMARY
+[32m * RESULT: SUCCESS[0m
+ * TESTS: 1
+ * ERRORS: 0
+ * FAILURES: 0
+
+rostest log file is in /home/tree/.ros/log/rostest-tree-29300.log

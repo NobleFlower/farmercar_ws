@@ -1,0 +1,8 @@
+# 最小方向模型：底盘、转轴、相机的原点重合，不做平移/安装高度补偿。
+# camera optical: x右/y下/z前 -> camera_link: x前/y左/z上。
+# x_link=z_optical, y_link=-x_optical, z_link=-y_optical。
+max_steering_angle: 0.8726646259971648  # 50 deg in radians
+steering_topic: /vehicle/steering_joint_states
+steering_joint: steering_joint
+steering_timeout: 0.5
+publish_rate: 30.0

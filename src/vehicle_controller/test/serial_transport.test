@@ -1,0 +1,4 @@
+<launch>
+  <!-- Test creates a PTY and starts the bridge against it, never a real device. -->
+  <test pkg="vehicle_controller" type="test_serial_transport.py" test-name="serial_transport" time-limit="35"/>
+</launch>

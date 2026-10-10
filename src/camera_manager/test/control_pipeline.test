@@ -1,0 +1,16 @@
+<launch>
+  <include file="$(find apriltag_servo)/launch/follow.launch">
+    <arg name="detections_topic" value="/pipeline_test/detections"/>
+    <arg name="preview_namespace" value="/pipeline_test/servo"/>
+    <arg name="publish_tag_tf" value="false"/>
+    <arg name="desired_distance" value="1.0"/>
+  </include>
+  <include file="$(find velocity_adapter)/launch/tricycle.launch">
+    <arg name="input_topic" value="/pipeline_test/servo/cmd_vel"/>
+    <arg name="input_stamped" value="true"/>
+  </include>
+  <include file="$(find vehicle_controller)/launch/vehicle_bridge.launch">
+    <arg name="command_topic" value="/tricycle_controller/command"/>
+  </include>
+  <test pkg="camera_manager" type="test_control_pipeline.py" test-name="control_pipeline" time-limit="60"/>
+</launch>

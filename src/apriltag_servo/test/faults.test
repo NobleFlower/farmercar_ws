@@ -1,0 +1,12 @@
+<launch>
+  <include file="$(find apriltag_servo)/launch/follow.launch">
+    <arg name="start_enabled" value="true"/>
+    <arg name="detections_topic" value="/servo_test_detections"/>
+    <arg name="preview_namespace" value="/servo_test_preview"/>
+    <arg name="camera_frame" value="servo_test_camera"/>
+    <arg name="servo_frame" value="servo_test_axes"/>
+    <arg name="tag_frame" value="servo_test_tag"/>
+    <arg name="publish_tag_tf" value="false"/>
+  </include>
+  <test test-name="servo_faults" pkg="apriltag_servo" type="test_ros_faults.py" time-limit="35"/>
+</launch>

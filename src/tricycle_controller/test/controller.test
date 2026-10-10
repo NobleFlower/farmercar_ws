@@ -1,0 +1,18 @@
+<launch>
+  <include file="$(find tricycle_controller)/launch/controller.launch">
+    <arg name="input_topic" value="/tricycle_test/plain_input"/>
+    <arg name="output_topic" value="/tricycle_test/plain_command"/>
+    <arg name="achievable_topic" value="/tricycle_test/plain_achievable"/>
+    <arg name="status_topic" value="/tricycle_test/plain_status"/>
+  </include>
+  <group ns="stamped">
+    <include file="$(find tricycle_controller)/launch/controller.launch">
+      <arg name="input_stamped" value="true"/>
+      <arg name="input_topic" value="/tricycle_test/stamped_input"/>
+      <arg name="output_topic" value="/tricycle_test/stamped_command"/>
+      <arg name="achievable_topic" value="/tricycle_test/stamped_achievable"/>
+      <arg name="status_topic" value="/tricycle_test/stamped_status"/>
+    </include>
+  </group>
+  <test pkg="tricycle_controller" type="test_ros_controller.py" test-name="controller" time-limit="45"/>
+</launch>

@@ -1,0 +1,7 @@
+digraph G {
+"camera_link" -> "road11"[label="Broadcaster: /apriltag_ros_continuous_node\nAverage rate: 10.203 Hz\nMost recent transform: 1791549819.432 ( 0.087 sec old)\nBuffer length: 4.901 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1791549819.519"[ shape=plaintext ] ;
+ }->"camera_link";
+}

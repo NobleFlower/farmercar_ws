@@ -1,0 +1,19 @@
+[WARN] [1791598635.039326]: Protocol preview only: no serial port is opened. Speed units / steering sign need calibration.
+[INFO] [1791598635.049091]: Tricycle kinematics: vx + yaw_rate only; vy/in-place rotation rejected. Software outputs only.
+[INFO] [1791598635.029733]: Velocity bridge: differential passthrough / holonomic bearing approximation. Software only.
+[WARN] [1791598635.055327]: AprilTag servo PREVIEW ONLY: direct optical z -> forward x, no mounting or steering compensation.
+... logging to /home/tree/.ros/log/rostest-tree-23943.log
+[ROSUNIT] Outputting test results to /home/tree/.ros/test_results/camera_manager/rostest-test_control_pipeline.xml
+[Testcase: testcontrol_pipeline] ... ok
+
+[ROSTEST]-----------------------------------------------------------------------
+
+[camera_manager.rosunit-control_pipeline/test_pipeline_and_stop][passed]
+
+SUMMARY
+[32m * RESULT: SUCCESS[0m
+ * TESTS: 1
+ * ERRORS: 0
+ * FAILURES: 0
+
+rostest log file is in /home/tree/.ros/log/rostest-tree-23943.log

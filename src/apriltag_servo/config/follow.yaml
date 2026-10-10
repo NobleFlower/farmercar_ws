@@ -1,0 +1,18 @@
+# PREVIEW ONLY: no /cmd_vel or vehicle-control publisher exists in this package.
+wheelbase: 0.839
+max_steering_deg: 50.0
+max_speed: 0.15
+max_acceleration: 0.15
+distance_gain: 0.3
+distance_deadband: 0.05
+minimum_forward_target: 0.05
+control_rate: 20.0
+target_timeout: 0.5
+future_tolerance: 0.05
+camera_frame: camera_optical_frame
+servo_frame: camera_link
+tag_frame: apriltag_link
+publish_tag_tf: true
+
+# Independent servo standoff; 2.9 m was an observation, not this setpoint.
+desired_distance: 1.0

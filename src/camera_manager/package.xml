@@ -61,9 +61,22 @@
   <exec_depend>roscpp</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>std_msgs</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>tf</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>usb_cam</exec_depend>
+  <exec_depend>image_proc</exec_depend>
+  <exec_depend>apriltag_ros</exec_depend>
+  <exec_depend>apriltag_servo</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
+  <exec_depend>vehicle_controller</exec_depend>
+  <exec_depend>tricycle_controller</exec_depend>
+  <exec_depend>velocity_adapter</exec_depend>
+  <test_depend>rostest</test_depend>
+  <test_depend>rosnode</test_depend>
   <export>
     <!-- Other tools can request additional information be placed here -->
 

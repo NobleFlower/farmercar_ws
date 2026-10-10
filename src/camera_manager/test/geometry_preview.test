@@ -1,0 +1,7 @@
+<launch>
+  <include file="$(find camera_manager)/launch/tf_only.launch">
+    <arg name="assume_zero_steering" value="false"/>
+  </include>
+  <include file="$(find vehicle_controller)/launch/servo_preview.launch"/>
+  <test pkg="camera_manager" type="test_geometry_preview.py" test-name="geometry_preview" time-limit="30"/>
+</launch>

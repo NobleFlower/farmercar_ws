@@ -1,0 +1,17 @@
+<launch>
+  <arg name="input_topic" default="/tricycle_controller/cmd_vel"/>
+  <arg name="input_stamped" default="false"/>
+  <arg name="output_topic" default="/tricycle_controller/command"/>
+  <arg name="achievable_topic" default="/tricycle_controller/achievable_cmd_vel"/>
+  <arg name="status_topic" default="/tricycle_controller/status"/>
+  <arg name="config_file" default="$(find tricycle_controller)/config/controller.yaml"/>
+  <!-- No serial device, driver launch, or motor command interface here. -->
+  <node pkg="tricycle_controller" type="tricycle_controller_node.py" name="tricycle_controller" output="screen">
+    <rosparam command="load" file="$(arg config_file)"/>
+    <param name="input_stamped" value="$(arg input_stamped)"/>
+    <remap from="cmd_vel" to="$(arg input_topic)"/>
+    <remap from="command" to="$(arg output_topic)"/>
+    <remap from="achievable_cmd_vel" to="$(arg achievable_topic)"/>
+    <remap from="status" to="$(arg status_topic)"/>
+  </node>
+</launch>

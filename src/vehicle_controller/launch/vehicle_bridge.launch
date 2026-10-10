@@ -1,0 +1,16 @@
+<launch>
+  <arg name="serial_enabled" default="false"/>
+  <arg name="port" default="/dev/ttyACM0"/>
+  <arg name="baudrate" default="115200"/>
+  <arg name="protocol_version" default="legacy"/>
+  <arg name="command_topic" default="/tricycle_controller/command"/>
+  <arg name="config_file" default="$(find vehicle_controller)/config/bridge.yaml"/>
+  <node pkg="vehicle_controller" type="vehicle_bridge_node.py" name="vehicle_controller_bridge" output="screen">
+    <rosparam command="load" file="$(arg config_file)"/>
+    <param name="serial_enabled" value="$(arg serial_enabled)"/>
+    <param name="port" value="$(arg port)"/>
+    <param name="baudrate" value="$(arg baudrate)"/>
+    <param name="protocol_version" value="$(arg protocol_version)"/>
+    <remap from="chassis_command" to="$(arg command_topic)"/>
+  </node>
+</launch>

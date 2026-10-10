@@ -1,0 +1,18 @@
+[WARN] [1791556580.401088]: Protocol preview only: no serial port is opened. Speed units / steering sign need calibration.
+[WARN] [1791556580.459469]: No valid measured steering: moving TF edge is unavailable.
+[WARN] [1791556581.993237]: Steering feedback stale: stopped publishing the moving TF edge.
+... logging to /home/tree/.ros/log/rostest-tree-50425.log
+[ROSUNIT] Outputting test results to /home/tree/.ros/test_results/camera_manager/rostest-test_geometry_preview.xml
+[Testcase: testgeometry_preview] ... ok
+
+[ROSTEST]-----------------------------------------------------------------------
+
+[camera_manager.rosunit-geometry_preview/test_geometry_and_preview_watchdog][passed]
+
+SUMMARY
+[32m * RESULT: SUCCESS[0m
+ * TESTS: 1
+ * ERRORS: 0
+ * FAILURES: 0
+
+rostest log file is in /home/tree/.ros/log/rostest-tree-50425.log

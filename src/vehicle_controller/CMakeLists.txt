@@ -8,6 +8,7 @@ project(vehicle_controller)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  message_generation
   geometry_msgs
   roscpp
   rospy
@@ -104,7 +105,12 @@ find_package(catkin REQUIRED COMPONENTS
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
+catkin_python_setup()
+add_message_files(FILES VehicleFeedback.msg)
+generate_messages(DEPENDENCIES std_msgs)
+
 catkin_package(
+  CATKIN_DEPENDS message_runtime std_msgs
 #  INCLUDE_DIRS include
 #  LIBRARIES vehicle_controller
 #  CATKIN_DEPENDS geometry_msgs roscpp rospy sensor_msgs std_msgs
@@ -210,3 +216,15 @@ target_link_libraries(${PROJECT_NAME}_node
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+catkin_install_python(PROGRAMS scripts/servo_preview_adapter.py scripts/vehicle_bridge_node.py DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+install(DIRECTORY launch config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+
+if(CATKIN_ENABLE_TESTING)
+  catkin_add_nosetests(test/test_wire.py)
+  find_package(rostest REQUIRED)
+  add_rostest(test/bridge.test)
+  add_rostest(test/serial_transport.test)
+endif()
+
+install(FILES README.md PROTOCOL.md DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})

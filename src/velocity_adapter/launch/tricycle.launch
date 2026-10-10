@@ -1,0 +1,17 @@
+<launch>
+  <arg name="input_topic" default="/velocity_adapter/cmd_vel"/>
+  <arg name="input_stamped" default="false"/>
+  <arg name="adapter_config" default="$(find velocity_adapter)/config/adapter.yaml"/>
+  <arg name="controller_config" default="$(find tricycle_controller)/config/controller.yaml"/>
+  <!-- Software bridge + chassis kinematics only; no driver or serial launch. -->
+  <include file="$(find velocity_adapter)/launch/adapter.launch">
+    <arg name="input_topic" value="$(arg input_topic)"/>
+    <arg name="input_stamped" value="$(arg input_stamped)"/>
+    <arg name="config_file" value="$(arg adapter_config)"/>
+  </include>
+  <include file="$(find tricycle_controller)/launch/controller.launch">
+    <arg name="input_topic" value="/velocity_adapter/adapted_cmd_vel"/>
+    <arg name="input_stamped" value="true"/>
+    <arg name="config_file" value="$(arg controller_config)"/>
+  </include>
+</launch>

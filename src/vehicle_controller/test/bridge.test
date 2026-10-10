@@ -1,0 +1,8 @@
+<launch>
+  <include file="$(find vehicle_controller)/launch/vehicle_bridge.launch">
+    <arg name="serial_enabled" value="false"/>
+    <arg name="protocol_version" value="extended"/>
+    <arg name="command_topic" value="/bridge_test/command"/>
+  </include>
+  <test pkg="vehicle_controller" type="test_ros_bridge.py" test-name="bridge" time-limit="45"/>
+</launch>

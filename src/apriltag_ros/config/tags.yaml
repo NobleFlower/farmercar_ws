@@ -19,9 +19,9 @@
 #   ]
 standalone_tags:
   [
-    {id: 0, size: 0.154},
-    {id: 1,  size: 0.154},
-    {id: 3,  size: 0.154}
+    {id: 0, size: 0.154, name: 'road11'},
+    {id: 1, size: 0.154, name: 'road12'},
+    {id: 3, size: 0.154, name: 'road21'}
     # {id: 0, size: 0.5}
   ]
 # ## Tag bundle definitions

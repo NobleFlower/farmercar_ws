@@ -1,0 +1,7 @@
+heading_gain: 0.5       # 1/s; adds gain*velocity-vector bearing to requested yaw rate.
+allow_reverse: true
+zero_tolerance: 0.000001
+command_timeout: 0.5
+future_tolerance: 0.05
+output_rate: 20.0
+base_frame: base_link

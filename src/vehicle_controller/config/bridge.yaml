@@ -1,0 +1,18 @@
+protocol_version: legacy  # Existing EE01/EF01. Optional extended adds flags/ack/status.
+protocol_speed_units_per_mps: 1.0
+steering_neutral_deg: 90.0
+steering_sign: 1
+max_speed: 0.15
+max_steering_deg: 50.0
+wheelbase: 0.839
+command_timeout: 0.5
+feedback_timeout: 0.5
+output_rate: 20.0
+require_feedback: true
+# Existing EF01 cannot report auto-mode/ready/estop/faults; explicit opt-in needed.
+allow_legacy_actuation: false
+legacy_speed_is_measured: false
+legacy_steering_is_measured: false
+require_ack: false
+max_ack_lag: 10
+publish_simulated_joint_states: false

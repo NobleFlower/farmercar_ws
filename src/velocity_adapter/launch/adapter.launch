@@ -1,0 +1,14 @@
+<launch>
+  <arg name="input_topic" default="/velocity_adapter/cmd_vel"/>
+  <arg name="input_stamped" default="false"/>
+  <arg name="output_topic" default="/velocity_adapter/adapted_cmd_vel"/>
+  <arg name="status_topic" default="/velocity_adapter/status"/>
+  <arg name="config_file" default="$(find velocity_adapter)/config/adapter.yaml"/>
+  <node pkg="velocity_adapter" type="velocity_adapter_node.py" name="velocity_adapter" output="screen">
+    <rosparam command="load" file="$(arg config_file)"/>
+    <param name="input_stamped" value="$(arg input_stamped)"/>
+    <remap from="cmd_vel" to="$(arg input_topic)"/>
+    <remap from="adapted_cmd_vel" to="$(arg output_topic)"/>
+    <remap from="status" to="$(arg status_topic)"/>
+  </node>
+</launch>

@@ -1,0 +1,15 @@
+<launch>
+
+    <rosparam
+        command="load"
+        file="$(find apriltag_navigation)/config/line_nav.yaml"
+    />
+
+    <node
+        pkg="apriltag_navigation"
+        type="apriltag_line_nav"
+        name="apriltag_line_nav"
+        output="screen"
+    />
+
+</launch>

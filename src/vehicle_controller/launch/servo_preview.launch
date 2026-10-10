@@ -1,0 +1,13 @@
+<launch>
+  <arg name="command_topic" default="/apriltag_servo/preview/cmd_vel" />
+  <!-- This node ONLY publishes preview bytes; it never opens a serial port. -->
+  <node pkg="vehicle_controller" type="servo_preview_adapter.py" name="servo_preview_adapter" output="screen">
+    <param name="command_topic" value="$(arg command_topic)" />
+    <param name="wheelbase" value="0.839" />
+    <param name="max_steering_deg" value="50.0" />
+    <param name="max_speed" value="0.15" />
+    <param name="steering_neutral_deg" value="90.0" />
+    <param name="steering_sign" value="1.0" />
+    <param name="protocol_speed_units_per_mps" value="1.0" />
+  </node>
+</launch>

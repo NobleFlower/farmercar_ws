@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>tricycle_controller</name>
+  <version>0.1.0</version>
+  <description>Velocity to front-steering tricycle kinematics; software outputs only.</description>
+  <maintainer email="tree@example.com">tree</maintainer>
+  <license>BSD-3-Clause</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <depend>rospy</depend>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+  <test_depend>rostest</test_depend>
+  <test_depend>python3-nose</test_depend>
+</package>

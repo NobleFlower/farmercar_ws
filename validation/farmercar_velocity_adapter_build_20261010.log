@@ -1,0 +1,147 @@
+-- Using CATKIN_DEVEL_PREFIX: /home/tree/farmercar_ws/devel
+-- Using CMAKE_PREFIX_PATH: /opt/ros/noetic
+-- This workspace overlays: /opt/ros/noetic
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using Debian Python package layout
+-- Using empy: /usr/lib/python3/dist-packages/em.py
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/tree/farmercar_ws/build/test_results
+-- Forcing gtest/gmock from source, though one was otherwise available.
+-- Found gtest sources under '/usr/src/googletest': gtests will be built
+-- Found gmock sources under '/usr/src/googletest': gmock will be built
+-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+-- Using Python nosetests: /usr/bin/nosetests3
+-- catkin 0.8.12
+-- BUILD_SHARED_LIBS is on
+-- BUILD_SHARED_LIBS is on
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~  traversing 7 packages in topological order:
+-- ~~  - camera_manager
+-- ~~  - apriltag_ros
+-- ~~  - apriltag_navigation
+-- ~~  - apriltag_servo
+-- ~~  - tricycle_controller
+-- ~~  - vehicle_controller
+-- ~~  - velocity_adapter
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin package: 'camera_manager'
+-- ==> add_subdirectory(camera_manager)
+-- Installing devel-space wrapper /home/tree/farmercar_ws/src/camera_manager/scripts/vehicle_camera_tf.py to /home/tree/farmercar_ws/devel/lib/camera_manager
+-- +++ processing catkin package: 'apriltag_ros'
+-- ==> add_subdirectory(apriltag_ros)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- apriltag_ros: 2 messages, 1 services
+-- +++ processing catkin package: 'apriltag_navigation'
+-- ==> add_subdirectory(apriltag_navigation)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'apriltag_servo'
+-- ==> add_subdirectory(apriltag_servo)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- Installing devel-space wrapper /home/tree/farmercar_ws/src/apriltag_servo/scripts/apriltag_follow_preview.py to /home/tree/farmercar_ws/devel/lib/apriltag_servo
+-- +++ processing catkin package: 'tricycle_controller'
+-- ==> add_subdirectory(tricycle_controller)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- tricycle_controller: 1 messages, 0 services
+-- Installing devel-space wrapper /home/tree/farmercar_ws/src/tricycle_controller/scripts/tricycle_controller_node.py to /home/tree/farmercar_ws/devel/lib/tricycle_controller
+-- +++ processing catkin package: 'vehicle_controller'
+-- ==> add_subdirectory(vehicle_controller)
+-- Installing devel-space wrapper /home/tree/farmercar_ws/src/vehicle_controller/scripts/servo_preview_adapter.py to /home/tree/farmercar_ws/devel/lib/vehicle_controller
+-- +++ processing catkin package: 'velocity_adapter'
+-- ==> add_subdirectory(velocity_adapter)
+-- Installing devel-space wrapper /home/tree/farmercar_ws/src/velocity_adapter/scripts/velocity_adapter_node.py to /home/tree/farmercar_ws/devel/lib/velocity_adapter
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/tree/farmercar_ws/build
+[  4%] Built target camera_info_loader
+[  4%] Built target std_msgs_generate_messages_cpp
+[  4%] Built target _apriltag_ros_generate_messages_check_deps_AprilTagDetection
+[  4%] Built target sensor_msgs_generate_messages_cpp
+[  4%] Built target geometry_msgs_generate_messages_cpp
+[  4%] Built target _apriltag_ros_generate_messages_check_deps_AnalyzeSingleImage
+[  4%] Built target _apriltag_ros_generate_messages_check_deps_AprilTagDetectionArray
+[  4%] Built target sensor_msgs_generate_messages_py
+[  4%] Built target geometry_msgs_generate_messages_py
+[  4%] Built target std_msgs_generate_messages_py
+[  4%] Built target geometry_msgs_generate_messages_nodejs
+[  4%] Built target std_msgs_generate_messages_nodejs
+[  4%] Built target sensor_msgs_generate_messages_nodejs
+[  4%] Built target sensor_msgs_generate_messages_lisp
+[  4%] Built target geometry_msgs_generate_messages_lisp
+[  4%] Built target std_msgs_generate_messages_lisp
+[  4%] Built target std_msgs_generate_messages_eus
+[  4%] Built target geometry_msgs_generate_messages_eus
+[  4%] Built target sensor_msgs_generate_messages_eus
+[  4%] Built target roscpp_generate_messages_lisp
+[  4%] Built target tf2_msgs_generate_messages_nodejs
+[  4%] Built target roscpp_generate_messages_nodejs
+[  4%] Built target rosgraph_msgs_generate_messages_py
+[  4%] Built target rosgraph_msgs_generate_messages_cpp
+[  4%] Built target roscpp_generate_messages_cpp
+[  4%] Built target roscpp_generate_messages_py
+[  4%] Built target roscpp_generate_messages_eus
+[  4%] Built target rosgraph_msgs_generate_messages_lisp
+[  4%] Built target rosgraph_msgs_generate_messages_eus
+[  4%] Built target rosgraph_msgs_generate_messages_nodejs
+[  4%] Built target tf2_msgs_generate_messages_py
+[  4%] Built target nodelet_generate_messages_py
+[  4%] Built target bond_generate_messages_lisp
+[  4%] Built target bond_generate_messages_cpp
+[  4%] Built target tf_generate_messages_nodejs
+[  4%] Built target bond_generate_messages_eus
+[  4%] Built target tf_generate_messages_lisp
+[  4%] Built target tf2_msgs_generate_messages_lisp
+[  4%] Built target actionlib_msgs_generate_messages_eus
+[  4%] Built target tf_generate_messages_py
+[  4%] Built target nodelet_generate_messages_lisp
+[  4%] Built target actionlib_generate_messages_py
+[  4%] Built target tf_generate_messages_cpp
+[  4%] Built target actionlib_msgs_generate_messages_nodejs
+[  4%] Built target bond_generate_messages_nodejs
+[  4%] Built target nodelet_generate_messages_cpp
+[  4%] Built target nodelet_generate_messages_nodejs
+[  4%] Built target nodelet_generate_messages_eus
+[  4%] Built target actionlib_generate_messages_nodejs
+[  4%] Built target actionlib_msgs_generate_messages_cpp
+[  4%] Built target tf2_msgs_generate_messages_eus
+[  4%] Built target actionlib_generate_messages_eus
+[  4%] Built target actionlib_generate_messages_lisp
+[  4%] Built target actionlib_msgs_generate_messages_lisp
+[  4%] Built target actionlib_generate_messages_cpp
+[  4%] Built target actionlib_msgs_generate_messages_py
+[  4%] Built target tf_generate_messages_eus
+[  4%] Built target bond_generate_messages_py
+[  4%] Built target tf2_msgs_generate_messages_cpp
+[ 13%] Built target vehicle_controller_node
+[ 20%] Built target apriltag_ros_generate_messages_cpp
+[ 20%] Built target _tricycle_controller_generate_messages_check_deps_ChassisCommand
+[ 31%] Built target apriltag_ros_generate_messages_py
+[ 37%] Built target apriltag_ros_generate_messages_nodejs
+[ 44%] Built target apriltag_ros_generate_messages_lisp
+[ 53%] Built target apriltag_ros_generate_messages_eus
+[ 55%] Built target tricycle_controller_generate_messages_cpp
+[ 60%] Built target tricycle_controller_generate_messages_py
+[ 62%] Built target tricycle_controller_generate_messages_lisp
+[ 64%] Built target tricycle_controller_generate_messages_nodejs
+[ 68%] Built target tricycle_controller_generate_messages_eus
+[ 73%] Built target apriltag_ros_common
+[ 73%] Built target apriltag_ros_generate_messages
+[ 73%] Built target tricycle_controller_generate_messages
+[ 77%] Built target apriltag_ros_single_image_client_node
+[ 82%] Built target apriltag_ros_single_image_detector
+[ 86%] Built target apriltag_ros_continuous_detector
+[ 91%] Built target apriltag_ros_single_image_server_node
+[ 95%] Built target apriltag_ros_continuous_node
+[100%] Built target apriltag_line_nav
+Base path: /home/tree/farmercar_ws
+Source space: /home/tree/farmercar_ws/src
+Build space: /home/tree/farmercar_ws/build
+Devel space: /home/tree/farmercar_ws/devel
+Install space: /home/tree/farmercar_ws/install
+####
+#### Running command: "cmake /home/tree/farmercar_ws/src -DCATKIN_DEVEL_PREFIX=/home/tree/farmercar_ws/devel -DCMAKE_INSTALL_PREFIX=/home/tree/farmercar_ws/install -G Unix Makefiles" in "/home/tree/farmercar_ws/build"
+####
+####
+#### Running command: "make -j2 -l2" in "/home/tree/farmercar_ws/build"
+####

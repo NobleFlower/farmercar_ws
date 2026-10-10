@@ -1,0 +1,12 @@
+# Ackermann-like tricycle; hardware-independent kinematics only.
+wheelbase: 0.839
+max_steering_deg: 50.0
+max_forward_speed: 0.15
+max_reverse_speed: 0.15   # Set 0 to reject reverse; algorithm supports both signs.
+zero_speed_tolerance: 0.000001
+lateral_tolerance: 0.000001
+yaw_tolerance: 0.000001
+command_timeout: 0.5
+future_tolerance: 0.05
+output_rate: 20.0
+base_frame: base_link

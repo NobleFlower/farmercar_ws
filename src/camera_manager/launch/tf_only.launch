@@ -1,0 +1,8 @@
+<launch>
+  <arg name="geometry_file" default="$(find camera_manager)/config/geometry.yaml" />
+  <arg name="assume_zero_steering" default="true" />
+  <node pkg="camera_manager" type="vehicle_camera_tf.py" name="vehicle_camera_tf" output="screen">
+    <rosparam command="load" file="$(arg geometry_file)" />
+    <param name="assume_zero_steering" value="$(arg assume_zero_steering)" />
+  </node>
+</launch>
