@@ -1,0 +1,10 @@
+standalone_tags:
+  [
+    {id: 10, size: 0.154, name: 'road11'},
+    {id: 11, size: 0.154, name: 'road12'},
+    {id: 12, size: 0.154, name: 'road13'},
+    {id: 13, size: 0.154, name: 'road14'},
+    {id: 20, size: 0.154, name: 'road21'},
+    {id: 21, size: 0.154, name: 'road22'},
+    {id: 22, size: 0.154, name: 'road23'}
+  ]

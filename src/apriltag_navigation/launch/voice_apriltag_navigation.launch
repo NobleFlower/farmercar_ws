@@ -1,0 +1,16 @@
+<launch>
+  <arg name="config_file" default="$(find apriltag_navigation)/config/voice_navigation.yaml"/>
+  <arg name="voice_port" default="/dev/ttyCH341USB0"/>
+  <arg name="open_voice_port" default="true"/>
+  <arg name="cmd_vel_topic" default="/tricycle_controller/cmd_vel"/>
+  <arg name="tags_file" default="$(find apriltag_ros)/config/tags.yaml"/>
+  <node pkg="apriltag_navigation" type="voice_apriltag_navigation.py"
+        name="voice_apriltag_navigation" output="screen">
+    <rosparam command="load" file="$(arg config_file)"/>
+    <param name="voice_port" value="$(arg voice_port)"/>
+    <param name="open_voice_port" value="$(arg open_voice_port)"/>
+    <param name="tags_file" value="$(arg tags_file)"/>
+    <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
+    <remap from="status" to="/voice_apriltag_navigation/status"/>
+  </node>
+</launch>

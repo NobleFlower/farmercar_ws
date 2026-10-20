@@ -1,0 +1,29 @@
+# Voice + AprilTag lane-navigation tuning.
+wheelbase: 0.839
+max_steering_deg: 50.0
+
+# Ordinary travel and low-speed (forward/backward) tracking.
+low_speed_forward_mps: 0.3
+low_speed_reverse_mps: 0.3
+cruise_speed_mps: 0.3
+approach_speed_mps: 0.3
+
+# Cross-lane left turn: road14 -> road23 and road21 -> road12.
+cross_turn_speed_mps: 1.0
+cross_turn_steering_deg: 45.0
+
+# Commands use raw AprilTag optical z as the forward distance.
+terminal_approach_distance_m: 1.0
+cross_target_stop_distance_m: 0.5
+target_pass_distance_m: 0.5
+max_tracking_distance_m: 12.0
+tag_timeout_s: 0.5
+turn_timeout_s: 10.0
+
+detections_topic: /tag_detections
+control_rate: 20.0
+
+# CH340 voice module. Set open_voice_port=false for topic-only software checks.
+open_voice_port: true
+voice_port: /dev/ttyCH341USB0
+baudrate: 115200

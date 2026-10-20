@@ -20,6 +20,16 @@ class PipelineTests(unittest.TestCase):
         self.tx = None
         self.servo = None
         self.bridge = None
+        max_speed = float(rospy.get_param('/apriltag_follow_preview/max_speed', .15))
+        desired_distance = float(rospy.get_param(
+            '/apriltag_follow_preview/desired_distance', 1.0))
+        distance_gain = float(rospy.get_param(
+            '/apriltag_follow_preview/distance_gain', .3))
+        controller_max_speed = float(rospy.get_param(
+            '/tricycle_controller/max_forward_speed', .15))
+        servo_speed = min(max_speed, distance_gain*(3.0-desired_distance))
+        self.expected_speed = min(servo_speed, controller_max_speed)
+        self.expected_saturated = servo_speed > controller_max_speed+1e-9
         subs = [rospy.Subscriber('/tricycle_controller/command', ChassisCommand, lambda m:setattr(self,'cmd',m)),
                 rospy.Subscriber('/vehicle_controller/tx_packet',UInt8MultiArray,lambda m:setattr(self,'tx',list(m.data))),
                 rospy.Subscriber('/pipeline_test/servo/status',String,lambda m:setattr(self,'servo',json.loads(m.data))),
@@ -67,14 +77,20 @@ class PipelineTests(unittest.TestCase):
         until(lambda:message(),lambda:self.servo['reason']=='follow_disabled' and stopped())
         self.assertFalse(self.servo['enabled'])
         enable.publish(Bool(data=True))
-        until(lambda:message(),lambda:self.cmd.speed==.15 and self.bridge['reason']=='driver_disarmed')
+        until(lambda:message(),lambda:abs(self.cmd.speed-self.expected_speed)<1e-9 and
+              self.bridge['reason']=='driver_disarmed')
         self.assertEqual(self.tx,[0xEE,1,4,0,0,0x84,3,0x7A])
         arm.publish(Bool(data=True))  # Serial remains false: only exercise wire gating.
         for lateral in (.3,-.3,0):
             delta=math.atan(.839*2*lateral/(9+lateral*lateral))
-            until(lambda y=lateral:message(left=y),lambda:self.cmd.speed==.15 and abs(self.cmd.steering_angle-delta)<1e-9 and self.bridge['reason']=='ok' and self.tx[3]==15)
-            self.assertAlmostEqual(self.cmd.yaw_rate,.15*math.tan(delta)/.839)
-            self.assertFalse(self.cmd.saturated)
+            expected_raw = int(round(self.expected_speed*100))
+            until(lambda y=lateral:message(left=y),
+                  lambda:abs(self.cmd.speed-self.expected_speed)<1e-9 and
+                  abs(self.cmd.steering_angle-delta)<1e-9 and
+                  self.bridge['reason']=='ok' and self.tx[3]==expected_raw)
+            self.assertAlmostEqual(
+                self.cmd.yaw_rate,self.expected_speed*math.tan(delta)/.839)
+            self.assertEqual(self.cmd.saturated, self.expected_saturated)
             self.assertFalse(self.bridge['serial_enabled'])
             self.assertFalse(self.bridge['packet_written'])
             self.assertEqual(self.tx[-1],sum(self.tx[:-1])&255)

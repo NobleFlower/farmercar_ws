@@ -1,6 +1,6 @@
 <launch>
   <!-- 仅感知、TF 和伺服预览；此文件不启动底盘串口驱动。 -->
-  <arg name="video_device" default="/dev/video0" />
+  <arg name="video_device" default="/dev/video2" />
   <arg name="calibration_file" default="$(find camera_manager)/config/ost.yaml" />
   <arg name="geometry_file" default="$(find camera_manager)/config/geometry.yaml" />
   <arg name="assume_zero_steering" default="true" />

@@ -13,6 +13,7 @@
 | [部署与操作](DEPLOYMENT.md) | 环境与依赖、增量部署、编译、一键启动、手动跟随、参数、状态、停止与回退 |
 | [测试与验收](TESTING.md) | 35 项算法/协议测试、7 项 ROS 测试、真实相机验收、复验步骤及最终日志 |
 | [上下位机协议](PROTOCOL.md) | ROS 字段、V1/V2 字节协议、单位、小端、校验、位图、例帧和下位机行为 |
+| [语音导航联调](VOICE_NAVIGATION.md) | CH340 语音帧、跨垄/巡航状态机、启动命令、标签配置和调参位置 |
 
 协议正文与代码包内 `vehicle_controller/PROTOCOL.md` 内容一致；远端对应文件为
 `src/vehicle_controller/PROTOCOL.md`。扩展 V2 的上位机实现已完成，下位机固件本次未修改。

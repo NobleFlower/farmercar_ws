@@ -1,0 +1,22 @@
+<launch>
+  <include file="$(find apriltag_navigation)/launch/voice_apriltag_navigation.launch">
+    <arg name="open_voice_port" value="false"/>
+    <arg name="cmd_vel_topic" value="/voice_test/cmd_vel"/>
+    <arg name="tags_file" value="$(find apriltag_navigation)/test/test_tags.yaml"/>
+  </include>
+  <include file="$(find tricycle_controller)/launch/controller.launch">
+    <arg name="input_topic" value="/voice_test/cmd_vel"/>
+    <arg name="input_stamped" value="true"/>
+    <arg name="output_topic" value="/voice_test/command"/>
+    <arg name="achievable_topic" value="/voice_test/achievable"/>
+    <arg name="status_topic" value="/voice_test/status"/>
+    <arg name="max_forward_speed" value="3.0"/>
+    <arg name="max_reverse_speed" value="3.0"/>
+  </include>
+  <include file="$(find vehicle_controller)/launch/vehicle_bridge.launch">
+    <arg name="command_topic" value="/voice_test/command"/>
+    <arg name="max_speed" value="3.0"/>
+  </include>
+  <test pkg="apriltag_navigation" type="test_ros_voice_navigation.py"
+        test-name="voice_navigation" time-limit="30"/>
+</launch>

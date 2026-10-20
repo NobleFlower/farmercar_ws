@@ -1,0 +1,52 @@
+<launch>
+  <arg name="video_device" default="/dev/video2"/>
+  <arg name="calibration_file" default="$(find camera_manager)/config/ost.yaml"/>
+  <arg name="geometry_file" default="$(find camera_manager)/config/geometry.yaml"/>
+  <arg name="camera_frame" default="camera_optical_frame"/>
+  <arg name="voice_port" default="/dev/ttyCH341USB0"/>
+  <arg name="open_voice_port" default="true"/>
+  <arg name="serial_enabled" default="false"/>
+  <arg name="vehicle_port" default="/dev/ttyACM0"/>
+  <arg name="vehicle_baudrate" default="115200"/>
+  <arg name="vehicle_protocol" default="legacy"/>
+  <arg name="vehicle_config" default="$(find vehicle_controller)/config/bridge.yaml"/>
+  <arg name="max_speed" default="3.0"/>
+  <arg name="allow_legacy_actuation" default="false"/>
+
+  <include file="$(find camera_manager)/launch/enable_cam.launch">
+    <arg name="video_device" value="$(arg video_device)"/>
+    <arg name="calibration_file" value="$(arg calibration_file)"/>
+    <arg name="camera_frame" value="$(arg camera_frame)"/>
+  </include>
+  <group ns="usb_cam">
+    <node name="image_proc" pkg="image_proc" type="image_proc" output="screen"/>
+  </group>
+  <include file="$(find apriltag_ros)/launch/continuous_detection.launch">
+    <arg name="camera_name" value="/usb_cam"/>
+    <arg name="image_topic" value="image_rect_color"/>
+    <arg name="camera_frame" value="$(arg camera_frame)"/>
+  </include>
+  <include file="$(find camera_manager)/launch/tf_only.launch">
+    <arg name="geometry_file" value="$(arg geometry_file)"/>
+  </include>
+
+  <include file="$(find apriltag_navigation)/launch/voice_apriltag_navigation.launch">
+    <arg name="voice_port" value="$(arg voice_port)"/>
+    <arg name="open_voice_port" value="$(arg open_voice_port)"/>
+  </include>
+  <include file="$(find tricycle_controller)/launch/controller.launch">
+    <arg name="input_topic" value="/tricycle_controller/cmd_vel"/>
+    <arg name="input_stamped" value="true"/>
+    <arg name="max_forward_speed" value="$(arg max_speed)"/>
+    <arg name="max_reverse_speed" value="$(arg max_speed)"/>
+  </include>
+  <include file="$(find vehicle_controller)/launch/vehicle_bridge.launch">
+    <arg name="config_file" value="$(arg vehicle_config)"/>
+    <arg name="serial_enabled" value="$(arg serial_enabled)"/>
+    <arg name="port" value="$(arg vehicle_port)"/>
+    <arg name="baudrate" value="$(arg vehicle_baudrate)"/>
+    <arg name="protocol_version" value="$(arg vehicle_protocol)"/>
+    <arg name="max_speed" value="$(arg max_speed)"/>
+    <arg name="allow_legacy_actuation" value="$(arg allow_legacy_actuation)"/>
+  </include>
+</launch>

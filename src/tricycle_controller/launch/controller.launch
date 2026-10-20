@@ -5,10 +5,14 @@
   <arg name="achievable_topic" default="/tricycle_controller/achievable_cmd_vel"/>
   <arg name="status_topic" default="/tricycle_controller/status"/>
   <arg name="config_file" default="$(find tricycle_controller)/config/controller.yaml"/>
+  <arg name="max_forward_speed" default="0.15"/>
+  <arg name="max_reverse_speed" default="0.15"/>
   <!-- No serial device, driver launch, or motor command interface here. -->
   <node pkg="tricycle_controller" type="tricycle_controller_node.py" name="tricycle_controller" output="screen">
     <rosparam command="load" file="$(arg config_file)"/>
     <param name="input_stamped" value="$(arg input_stamped)"/>
+    <param name="max_forward_speed" value="$(arg max_forward_speed)"/>
+    <param name="max_reverse_speed" value="$(arg max_reverse_speed)"/>
     <remap from="cmd_vel" to="$(arg input_topic)"/>
     <remap from="command" to="$(arg output_topic)"/>
     <remap from="achievable_cmd_vel" to="$(arg achievable_topic)"/>
